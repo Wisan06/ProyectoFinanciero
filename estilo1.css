@@ -1,0 +1,165 @@
+body{
+	font-family: arial, helvetica;
+	background: rgb(255, 255, 255);
+}
+
+.menu{
+	position:relative;
+	top: -47px;
+	list-style: none;
+	padding: 0;
+	background: #130068;
+	width: 100%;
+	max-width: 577.2px;
+	margin: auto;
+}
+
+.menu li a{
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	padding: 20px;
+	display: block;
+}
+
+.menu li{
+	display: inline-block;
+	text-align: center;
+}
+
+.menu li a:hover{
+	background: #d80000;
+}
+
+#inicio{
+	color: rgb(0, 0, 0);
+
+	width: 1000px;
+	background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#transacciones{
+	color: rgb(2, 2, 2);
+	position: relative;
+	top: -20px;
+	left: 400px;
+	text-align: center;
+	width: 1000px;
+	background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#montoT{
+	color: rgb(0, 0, 0);
+
+	width: 1000px;
+	background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#productos{
+	color: rgb(0, 0, 0);
+
+	width: 1000px;
+	background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+#contacto{
+	color: rgb(0, 0, 0);
+
+	background-color: rgb(255, 255, 255); 
+	width: 1000px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#imagen-esquina {
+    position: absolute;
+    top: 15px; 
+    right: 15px; 
+    width: 150px; 
+    height: 150; 
+}
+
+#transacciones ul.menu {
+	display:inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+#transacciones ul.menu li{
+	display: inline-block;
+	margin: 0 10px;
+}
+
+#nucita{
+
+	position: relative;
+    left: 100px; 
+    top: -10px;  
+	width: 150px;
+	height: 250px;
+}
+
+#besos{
+
+	position: relative;
+	left: -100px; 
+	top: 180px;  
+	width: 250px;
+	height: 150px;
+
+}
+
+#piazza{
+	position: relative;
+	left: -350px; 
+	top: 400px;  
+	width: 270px;
+	height: 150px;
+}
+
+#cerrar-sesion-button{
+	position: relative;
+	right: 0px;
+	left: 1720px;
+	top: 175px;
+
+	background-color: #130068; 
+	color: rgb(255, 255, 255); 
+	border: none; 
+	padding: 10px 20px; 
+	text-align: center; 
+	text-decoration: none; 
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 5px; /* Borde redondeado */
+	transition: background-color 0.3s ease;
+}
+.boton-cerrar-sesion:hover {
+	background-color: #ff0000;
+}
+
+.contenedor-barra {
+	background-color: #ff0f0f; /* Color de fondo del contenedor */
+	padding: 10px; /* Espaciado interior del contenedor */
+	position: fixed; /* Fija el contenedor en la parte inferior de la pantalla */
+	left: 0; /* Alinea el contenedor a la izquierda */
+	bottom: 0; /* Fija el contenedor en la parte inferior */
+	width: 200%; /* Ancho del 100% para cubrir toda la pantalla */
+	text-align: center; /* Alineación del texto en el centro */
+	z-index: 1; /* Asegura que el contenedor esté en la parte superior */
+}
