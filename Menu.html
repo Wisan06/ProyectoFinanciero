@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Colombina</title>
+    <link rel="stylesheet" href="assets/css/estilo1.css">
+</head>
+<body>
+       
+
+    <button id="cerrar-sesion-button">Cerrar Sesión</button>
+    <img id= "imagen-esquina" src="assets\images\02.jpg" alt="Logo Colombina">
+    <ul class="menu">
+       
+            <li><a href="#" onclick="mostrarPagina('inicio')" class="menu-link">Inicio</a></li>
+            <li><a href="#" onclick="mostrarPagina('transacciones')" class="menu-link">Transacciones</a></li>
+            <li><a href="#" onclick="mostrarPagina('montoT')" class="menu-link">Monto Total</a></li>
+            <li><a href="#" onclick="mostrarPagina('productos')" class="menu-link">Productos</a></li>
+            <li><a href="#" onclick="mostrarPagina('contacto')" class="menu-link">Contacto</a></li>
+ 
+         </ul>
+
+    <div id="inicio" style="display: none;">
+        <h1>Inicio</h1>
+        <p>Bienvenido al Software Oficial de Colombina!</p>
+        
+    </div>
+
+    <div id="transacciones" style="display: none;">
+        <h1>Aquí podrás ver todas las transacciones del día</h1>
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Registro de Transacciones Bancarias</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f5f5f5;
+                    margin: 0;
+                    padding: 0;
+                }
+                h1 {
+                    text-align: center;
+                    color: #333;
+                }
+                .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                form {
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                    color: #555;
+                    width: 100%;
+                }
+                input[type="text"],
+                input[type="number"],
+                input[type="date"] {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                button[type="button"] {
+                    background-color: #0004ff;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button[type="button"]:hover {
+                    background-color: #0004ff;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #1100ff;
+                    color: #fff;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                .delete-button {
+                    background-color: #dc3545;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .delete-button:hover {
+                    background-color: #c82333;
+
+                }
+                .container{
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #ffffff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Registro de Transacciones Bancarias</h1>
+        
+                <form id="formulario-transacciones">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required><br>
+        
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" name="descripcion" required><br>
+        
+                    <label for="monto">Monto:</label>
+                    <input type="number" id="monto" name="monto" step="0.01" required><br>
+        
+                    <button type="button" onclick="agregarTransaccion()">Agregar Transacción</button>
+                </form>
+        
+                <h2>Extracto Bancario</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Descripción</th>
+                            <th>Monto</th>
+                            <th>Tipo</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                    </tbody>
+                </table>
+            </div>
+        
+            <script>
+                function agregarTransaccion() {
+                    var fecha = document.getElementById("fecha").value;
+        var descripcion = document.getElementById("descripcion").value;
+        var monto = parseFloat(document.getElementById("monto").value);
+
+        // Verificar si algún campo está vacío
+        if (fecha === "" || descripcion === "" || isNaN(monto)) {
+            alert("Por favor, complete todos los campos.");
+            return; // No agrega la transacción si falta algún dato
+        }
+
+        var tipo = monto >= 0 ? "Entrada" : "Salida";
+
+        // Crear una nueva fila en la tabla de extracto
+        var table = document.querySelector("table tbody");
+        var newRow = table.insertRow(table.rows.length);
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+        var cell5 = newRow.insertCell(4);
+        cell1.innerHTML = fecha;
+        cell2.innerHTML = descripcion;
+        cell3.innerHTML = "$" + Math.abs(monto); // Mostrar el monto absoluto
+        cell4.innerHTML = tipo;
+        cell5.innerHTML = '<button class="delete-button" onclick="eliminarTransaccion(this)">Eliminar</button>';
+        
+        // Limpiar los campos del formulario
+        document.getElementById("fecha").value = "";
+        document.getElementById("descripcion").value = "";
+        document.getElementById("monto").value = "";
+    }
+
+    function eliminarTransaccion(button) {
+        // Obtener la fila actual que contiene el botón
+        var row = button.parentNode.parentNode;
+        
+        // Eliminar la fila de la tabla
+        row.parentNode.removeChild(row);
+    }
+
+    
+        
+                function eliminarTransaccion(button) {
+                    // Obtener la fila actual que contiene el botón
+                    var row = button.parentNode.parentNode;
+                    
+                    // Eliminar la fila de la tabla
+                    row.parentNode.removeChild(row);
+                }
+            </script>
+        </body>
+        </html>
+    </div>
+
+    <div id="montoT" style="display: none;">
+        <h1>Página de Montos de cada Dependencia</h1>
+        <p>Contenido de la página de Montos</p>
+        
+    </div>
+
+    <div id="productos" style="display: none;">
+        <h1>Página de Productos</h1>
+        <img id= "imagen-esquina" src="assets\images\02.jpg" alt="Logo Colombina">
+        <img id= "nucita" src="assets\images\nucita.jpg" alt="Nucita Bebida">
+        <img id= "besos" src="assets\images\besos.jpg" alt="ChocMelos Bessos">
+        <img id= "piazza" src="assets\images\Piazza.jpg" alt="Piazza Cockies and Cream">
+    
+    </div>
+
+    <div id="contacto" style="display: none;">
+        <h1>Página de Contacto</h1>
+        <p>Contacto con los desarrolladores.</p>
+        <p> William Godoy </p>
+        <p> Mariangel Amada </p>
+        <p> Miguel Giraldo </p>
+        <p> Camila Flechas </p>
+        
+    </div>
+
+    <script>
+        function mostrarPagina(pagina) {
+            document.querySelectorAll('div[id]').forEach(div => {
+                div.style.display = 'none';
+            });
+
+            document.getElementById(pagina).style.display = 'block';
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            document.getElementById('cerrar-sesion-button').addEventListener('click', function () {
+                
+                window.location.href = 'Login.html';
+            });
+        });
+    </script>
+</body>
+</html>
